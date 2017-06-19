@@ -44,17 +44,10 @@ func Moebius(n int ) int {
  * @param b
  */
 func GCD(a int, b int) int {
-	r0 := b
-	r1 := a % b
-	q1 := int(a/b)
-	a = q1 * r0 + r1
-	if r1 == 0 {
-		return r0
+	for b != 0 {
+		a, b = b, a%b
 	}
-	if r1 == 1 {
-		return 1
-	}
-	return GCD(r0, r1)
+	return a
 }
 
 /**
