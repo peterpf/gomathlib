@@ -36,8 +36,8 @@ func TestMoebius(t *testing.T) {
 }
 
 func TestGCD(t *testing.T) {
-	var inputValues = [][]int {{1, 7}, {4, 8}, {7, 13}}
-	var expectedResults = []int {1, 4, 1}
+	var inputValues = [][]int {{1, 7}, {4, 8}, {7, 13}, {49865, 69811}}
+	var expectedResults = []int {1, 4, 1, 9973}
 	for i := 0; i < len(inputValues); i++ {
 		a := inputValues[i][0]
 		b := inputValues[i][1]
