@@ -3,7 +3,7 @@
 Collection of several mathematical functions and data structures.
 Find a list of supported functions below:
 
-## Numerics
+## Number Theory
 
 - Totient function
 - Möbius function
