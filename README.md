@@ -13,3 +13,10 @@ Find a list of supported functions below:
 ## Stack Data Structure
 
 - First-In-First-Out (FIFO)
+
+## Image Processing
+
+This section lists functions applied on matrices (provided by [gonum.org/v1/gonum/mat](https://pkg.go.dev/gonum.org/v1/gonum/mat)) for image manipulation:
+
+- Average Filter
+- Gauss Filter
