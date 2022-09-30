@@ -20,3 +20,10 @@ This section lists functions applied on matrices (provided by [gonum.org/v1/gonu
 
 - Average Filter
 - Gauss Filter
+
+## Data Scalers
+
+List of scalers for data:
+
+- MinMaxScaler
+- StandardScaler
