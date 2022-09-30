@@ -12,4 +12,4 @@ Find a list of supported functions below:
 
 ## Stack Data Structure
 
-- Last-In-First-Out (LIFO)
+- First-In-First-Out (FIFO)

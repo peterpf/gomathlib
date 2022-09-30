@@ -4,7 +4,7 @@ import "testing"
 
 func TestPush(t *testing.T) {
 	// Arrange
-	stack := NewLIFOStack[int](5)
+	stack := NewFIFOStack[int](5)
 	for i := 0; i < 5; i++ {
 		stack.Push(intToPtr(i))
 	}
@@ -19,7 +19,7 @@ func TestPush(t *testing.T) {
 
 func TestIsFull(t *testing.T) {
 	// Arrange
-	stack := NewLIFOStack[int](5)
+	stack := NewFIFOStack[int](5)
 	for i := 0; i < 5; i++ {
 		stack.Push(intToPtr(i))
 	}
