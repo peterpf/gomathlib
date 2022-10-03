@@ -48,6 +48,13 @@ func (s *FIFOStack[T]) Elements() []*T {
 	}
 	return items
 }
+
+// Clear removes all elements from the stack.
+func (s *FIFOStack[T]) Clear() {
+	s.currentElementIdx = 0
+	s.elements = make([]*T, s.maxSize)
+}
+
 // IsFull returns true when no nil-elements are in the stack.
 func (s *FIFOStack[T]) IsFull() bool {
 	return s.Size() == s.maxSize

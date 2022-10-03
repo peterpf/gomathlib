@@ -37,6 +37,40 @@ func TestIsFull(t *testing.T) {
 	}
 }
 
+func TestClear(t *testing.T) {
+	// Arrange
+	stack := NewFIFOStack[int](5)
+	for i := 0; i < 5; i++ {
+		stack.Push(intToPtr(i))
+	}
+
+	// Act - clear
+	stack.Clear()
+
+	// Assert if empty
+	gotElements := stack.Elements()
+	if len(gotElements) != 0 {
+		t.Errorf("expected stack to be empty, got size: %d", len(gotElements))
+	}
+
+	// Act - add elements
+	stack.Push(intToPtr(6))
+	stack.Push(intToPtr(7))
+	stack.Push(intToPtr(8))
+
+	// Assert added elements
+	gotElements = stack.Elements()
+	expectedElements := []int{6, 7, 8}
+	if len(gotElements) != len(expectedElements) {
+		t.Errorf("expected stack to have size %d, got %d", len(expectedElements), len(gotElements))
+	}
+	for i := 0; i < len(expectedElements); i++ {
+		if *gotElements[i] != expectedElements[i] {
+			t.Errorf("expected element %d at position %d, got %d", expectedElements[i], i, *stack.elements[i])
+		}
+	}
+}
+
 // Convert integer to pointer.
 func intToPtr(i int) *int {
 	ptr := i
