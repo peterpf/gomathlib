@@ -27,3 +27,4 @@ List of scalers for data:
 
 - MinMaxScaler
 - StandardScaler
+- Limiter (to cap values between min and max)

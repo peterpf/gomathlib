@@ -87,3 +87,47 @@ func (s *StandardScaler) GetParam(key string) *float64 {
 }
 
 //#endregion
+
+// #region Limiter
+
+type Limiter struct {
+	min float64
+	max float64
+}
+
+func NewLimiter(min, max float64) *Limiter {
+	return &Limiter{
+		min: min,
+		max: max,
+	}
+}
+
+func (s *Limiter) Fit(data []float64) {}
+
+func (s *Limiter) Transform(v float64) float64 {
+	if v < s.min {
+		return s.min
+	}
+	if v > s.max {
+		return s.max
+	}
+	return v
+}
+
+// InverseTransform of the limiter is incapable of reversing the transformation, thus returning the input value.
+func (s *Limiter) InverseTransform(v float64) float64 {
+	return v
+}
+
+func (s *Limiter) GetParam(key string) *float64 {
+	switch key {
+	case "min":
+		return &s.min
+	case "max":
+		return &s.max
+	default:
+		return nil
+	}
+}
+
+//#endregion
